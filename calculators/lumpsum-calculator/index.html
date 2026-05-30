@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lumpsum Calculator | SmartCalc</title>
+
+<link rel="stylesheet" href="/assets/css/global.css">
+<link rel="stylesheet" href="./style.css">
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<header id="navbar"></header>
+
+<main>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="hero-grid">
+
+    <!-- LEFT -->
+    <div>
+      <div class="badge">SMART INVESTMENT TOOL</div>
+
+      <h1 class="hero-title">
+        Grow Your Money with <span>Compounding 🚀</span>
+      </h1>
+
+      <p class="hero-sub">
+        Calculate future value, adjust for inflation, and make smarter financial decisions.
+      </p>
+
+      <div class="chips">
+        <span class="chip">📊 Visual</span>
+        <span class="chip">💡 Smart Insights</span>
+        <span class="chip">⚡ Instant</span>
+      </div>
+    </div>
+
+    <!-- RIGHT (INPUT CARD) -->
+    <div class="card">
+
+      <div class="card-header">
+        <h3>Investment Details</h3>
+      </div>
+
+      <!-- MODE -->
+      <label>Mode</label>
+      <select id="modeToggle">
+        <option value="investment">💰 Investment Mode</option>
+        <option value="goal">🎯 Goal Mode</option>
+      </select>
+
+      <!-- AMOUNT -->
+      <label>Amount (₹)</label>
+      <input type="number" id="amount" value="50000">
+
+      <!-- RATE -->
+      <label>Return Rate (%)</label>
+      <input type="number" id="rate" value="12">
+
+      <!-- RISK -->
+      <label>Risk Level</label>
+      <select id="risk">
+        <option value="medium">📊 Medium</option>
+        <option value="low">🟢 Low</option>
+        <option value="high">🔴 High</option>
+      </select>
+
+      <!-- TIME -->
+      <label>Time (Years)</label>
+      <input type="number" id="time" value="10">
+
+      <!-- COMPOUNDING -->
+      <label>Compounding</label>
+      <select id="compounding">
+        <option value="yearly">Yearly</option>
+        <option value="monthly">Monthly</option>
+        <option value="daily">Daily</option>
+      </select>
+
+      <!-- INFLATION -->
+      <label>Inflation (%)</label>
+      <input type="number" id="inflation" value="6">
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= RESULTS ================= -->
+<section class="container">
+
+  <div class="result-grid">
+
+    <div class="result-card highlight">
+      <p>Future Value</p>
+      <h2 id="futureValue">₹0</h2>
+    </div>
+
+    <div class="result-card">
+      <p>Invested Amount</p>
+      <h2 id="invested">₹0</h2>
+    </div>
+
+    <div class="result-card profit">
+      <p>Real Value (After Inflation)</p>
+      <h2 id="realValue">₹0</h2>
+    </div>
+
+  </div>
+
+  <!-- METRICS -->
+  <div class="result-grid" style="margin-top:20px;">
+
+    <div class="result-card">
+      <p>Total Gain</p>
+      <h2 id="gain">₹0</h2>
+    </div>
+
+    <div class="result-card">
+      <p>CAGR</p>
+      <h2 id="cagr">0%</h2>
+    </div>
+
+    <div class="result-card highlight">
+      <p>Wealth Multiplier</p>
+      <h2 id="multiplier">0x</h2>
+    </div>
+
+  </div>
+
+  <!-- INSIGHT -->
+  <div class="insight" id="insight"></div>
+
+</section>
+
+<!-- ================= CHART ================= -->
+<section class="container">
+
+  <div class="card chart-card">
+    <h3>Growth Projection 📈</h3>
+
+    <div class="chart-wrapper">
+      <canvas id="chart"></canvas>
+    </div>
+  </div>
+
+</section>
+
+<!-- ================= BREAKDOWN ================= -->
+<section class="container">
+
+  <div class="card">
+
+    <h3>Yearly Breakdown 📅</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Year</th>
+          <th>Value</th>
+          <th>Gain</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+
+  </div>
+
+</section>
+
+<!-- ================= SHARE ================= -->
+<section class="container">
+
+  <div class="share-box">
+
+    <div>
+      <h3>Share your growth 🚀</h3>
+      <p>Show others your smart investment</p>
+    </div>
+
+    <div class="share-actions">
+      <button class="wa" id="waBtn">WhatsApp</button>
+      <button class="copy" id="copyBtn">Copy</button>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= RELATED ================= -->
+<section class="container">
+
+  <h2 class="section-title">Related Calculators</h2>
+
+  <div class="related-grid">
+
+    <a href="/calculators/sip-calculator/index.html" class="related-card">
+      <div class="rel-icon">📊</div>
+      <h4>SIP Calculator</h4>
+      <p>Compare with monthly investing</p>
+    </a>
+
+    <a href="/calculators/emi-calculator/index.html" class="related-card">
+      <div class="rel-icon">💰</div>
+      <h4>EMI Calculator</h4>
+      <p>Plan your loans smartly</p>
+    </a>
+
+  </div>
+
+</section>
+
+<!-- ================= INFO ================= -->
+<section class="container">
+
+  <div class="info-grid">
+
+    <div class="info-card">
+      <h4>📐 Formula</h4>
+      <p>FV = P × (1 + r/n)^(n×t)</p>
+    </div>
+
+    <div class="info-card">
+      <h4>⚠️ Disclaimer</h4>
+      <p>This is for educational purposes only.</p>
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+<footer id="footer"></footer>
+
+<!-- JS -->
+<script src="../../assets/js/components.js"></script>
+<script src="../../assets/js/background.js"></script>
+
+<!-- PAGE LOGIC -->
+<script src="./app.js"></script>
+
+</body>
+</html>
