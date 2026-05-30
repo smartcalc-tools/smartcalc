@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EMI Calculator India 2026 | Home Loan, Car Loan & Personal Loan EMI Calculator</title>
+
+<meta name="description" content="Free EMI Calculator India 2026. Calculate home loan, car loan, and personal loan EMI instantly. Get monthly EMI, interest, total payment, and savings with prepayment option.">
+<meta name="keywords" content="emi calculator, emi calculator india, home loan emi calculator, car loan emi calculator, loan calculator, personal loan emi, emi formula calculator">
+
+<meta name="robots" content="index, follow">
+<meta name="author" content="SmartCalc">
+
+<link rel="canonical" href="https://yourdomain.com/calculators/emi-calculator/">
+
+<!-- Open Graph (Facebook / WhatsApp SEO) -->
+<meta property="og:title" content="EMI Calculator India 2026 – Calculate Loan EMI Instantly">
+<meta property="og:description" content="Calculate EMI for home, car, and personal loans with interest breakdown and prepayment savings.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yourdomain.com/calculators/emi-calculator/">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="EMI Calculator India 2026">
+<meta name="twitter:description" content="Instant EMI calculator with interest breakdown and savings analysis.">
+
+<!-- Favicon (IMPORTANT for SEO trust) -->
+<link rel="icon" href="/assets/images/logo.png">
+
+<!-- CSS -->
+<link rel="stylesheet" href="/assets/css/global.css">
+<link rel="stylesheet" href="./style.css">
+
+<!-- Chart -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<header id="navbar"></header>
+
+<main>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="hero-grid">
+
+    <!-- LEFT -->
+    <div>
+      <div class="badge">SMART LOAN CALCULATOR</div>
+
+     <h1 class="hero-title">
+  EMI Calculator India 2026 <span>Home Loan, Car Loan & Personal Loan EMI ⚡</span>
+</h1>
+
+      <p class="hero-sub">
+        Understand your loan, interest, and savings with powerful insights.
+      </p>
+
+      <div class="chips">
+        <span class="chip">⚡ Instant</span>
+        <span class="chip">📊 Visual</span>
+        <span class="chip">💡 Smart</span>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="card">
+
+      <div class="card-header">
+        <h3>Loan Details</h3>
+      </div>
+
+      <!-- Loan Type -->
+      <label>Loan Type</label>
+      <select id="loanType">
+        <option value="home">🏠 Home Loan</option>
+        <option value="car">🚗 Car Loan</option>
+        <option value="personal">💳 Personal Loan</option>
+      </select>
+
+      <!-- Amount -->
+      <label>Loan Amount (₹)</label>
+      <input type="number" id="amount" value="2000000">
+
+      <!-- Rate -->
+      <label>Interest Rate (%)</label>
+      <input type="number" id="rate" value="8.5">
+
+      <!-- TOGGLE -->
+      <div class="toggle">
+        <button id="yearsBtn" class="active">Years</button>
+        <button id="monthsBtn">Months</button>
+      </div>
+
+      <!-- Tenure -->
+      <label>Tenure</label>
+      <input type="number" id="tenure" value="20">
+
+      <!-- ================= PREPAYMENT ================= -->
+    <!-- 🔘 PREPAY TOGGLE -->
+<div class="prepay-toggle" id="prepayToggle">
+  ➕ Add Prepayment (Save Interest)
+</div>
+
+<!-- 🔽 PREPAY BOX (HIDDEN) -->
+<div class="prepay-box hidden" id="prepayBox">
+
+  <label>Extra Monthly Payment (₹)</label>
+  <input type="number" id="extra" value="0">
+
+  <label>One-time Prepayment (₹)</label>
+  <input type="number" id="lumpSum" value="0">
+
+</div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= RESULTS ================= -->
+<section class="container">
+
+  <!-- 🔴 WITHOUT PREPAYMENT -->
+  <h3 style="margin-bottom:10px;">Without Prepayment</h3>
+  <div class="result-grid">
+
+    <div class="result-card">
+      <p>Monthly EMI</p>
+      <h2 id="emi">₹0</h2>
+    </div>
+
+    <div class="result-card">
+      <p>Total Interest</p>
+      <h2 id="interest">₹0</h2>
+    </div>
+
+    <div class="result-card">
+      <p>Total Payment</p>
+      <h2 id="total">₹0</h2>
+    </div>
+
+  </div>
+
+  <!-- 🟢 WITH PREPAYMENT -->
+  <h3 style="margin:30px 0 10px;">With Prepayment ⚡</h3>
+  <div class="result-grid">
+
+    <div class="result-card">
+      <p>Monthly EMI</p>
+      <h2 id="emiNew">₹0</h2>
+    </div>
+
+    <div class="result-card">
+      <p>Total Interest</p>
+      <h2 id="interestNew">₹0</h2>
+    </div>
+
+    <div class="result-card highlight">
+      <p>New Tenure</p>
+      <h2 id="newTenure">0</h2>
+    </div>
+
+  </div>
+
+  <!-- 💰 SAVINGS -->
+ <div class="insight savings-box">
+
+  <h3>🚀 Your Savings Impact</h3>
+
+  <p class="savings-text">
+    By making smart prepayments, you can save 
+    <span class="highlight" id="savedInterest">₹0</span> 
+    in interest and finish your loan 
+    <span class="highlight" id="savedTime">0 months</span> earlier.
+  </p>
+
+  <p class="savings-sub">
+    Your new loan tenure becomes 
+    <b id="newTenureText">0</b>, helping you become debt-free faster 💰
+  </p>
+
+</div>
+
+</section>
+
+  <!-- INSIGHT -->
+  <div class="insight" id="insightText">
+    Add extra payment to see savings 🚀
+  </div>
+
+</section>
+
+<!-- ================= CHARTS ================= -->
+<section class="container">
+  <div class="chart-grid">
+
+    <div class="card chart-card">
+      <h3>EMI Breakdown</h3>
+      <div class="chart-wrapper">
+        <canvas id="pieChart"></canvas>
+      </div>
+    </div>
+
+    <div class="card chart-card">
+      <h3>Loan reduces over time 📉</h3>
+      <div class="chart-wrapper">
+        <canvas id="lineChart"></canvas>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= TABLE ================= -->
+<section class="container">
+
+  <button class="table-toggle" id="toggleTable">
+    Show Full Schedule
+  </button>
+
+  <div id="tableContainer" class="table-container hidden">
+    <table>
+      <thead>
+        <tr>
+          <th>Month</th>
+          <th>EMI</th>
+          <th>Principal</th>
+          <th>Interest</th>
+          <th>Balance</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </div>
+
+</section>
+
+<!-- ================= SHARE ================= -->
+<section class="container">
+
+  <div class="share-box">
+
+    <div>
+      <h3>Share your EMI 📱</h3>
+      <p>Help others plan smarter finances</p>
+    </div>
+
+    <div class="share-actions">
+      <button class="wa" id="waBtn">WhatsApp</button>
+      <button class="copy" id="copyBtn">Copy</button>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= INFORMATION ================= -->
+<section class="container">
+
+  <h2 class="section-title">📘 EMI Formula & Important Information</h2>
+
+  <div class="info-grid">
+
+    <div class="info-card">
+      <h4>📐 How EMI is Calculated</h4>
+
+      <p>
+        EMI is calculated using a standard loan formula used by banks worldwide.
+      </p>
+
+      <p style="margin-top:10px;">
+        <b>EMI = [P × r × (1 + r)^n] / [(1 + r)^n − 1]</b>
+      </p>
+
+      <p style="margin-top:10px;">
+        Where:
+        <br>• <b>P</b> = Loan amount (Principal)
+        <br>• <b>r</b> = Monthly interest rate
+        <br>• <b>n</b> = Total number of months
+      </p>
+
+    </div>
+
+    <div class="info-card">
+      <h4>⚠️ Disclaimer</h4>
+      <p>
+        This EMI calculator is for educational purposes only. Actual EMI may vary based on bank policies, credit score, interest rate changes, and processing fees.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= FAQ ================= -->
+<section class="container">
+
+  <h2 class="section-title">❓ Frequently Asked Questions</h2>
+
+  <p class="section-subtitle">
+    Quick answers to common EMI and loan-related questions.
+  </p>
+
+  <div class="info-grid">
+
+    <div class="info-card">
+      <h4>What is EMI?</h4>
+      <p>EMI is a fixed monthly payment used to repay loans including principal and interest.</p>
+    </div>
+
+    <div class="info-card">
+      <h4>How is EMI calculated?</h4>
+      <p>EMI is calculated using loan amount, interest rate, and tenure using a standard financial formula.</p>
+    </div>
+
+    <div class="info-card">
+      <h4>Can I reduce EMI?</h4>
+      <p>Yes, by increasing tenure, reducing interest rate, or making prepayments.</p>
+    </div>
+
+    <div class="info-card">
+      <h4>Is prepayment useful?</h4>
+      <p>Yes, it reduces total interest and helps close loans faster.</p>
+    </div>
+
+    <div class="info-card">
+      <h4>Does EMI include interest?</h4>
+      <p>Yes, EMI includes both principal and interest components.</p>
+    </div>
+
+    <div class="info-card">
+      <h4>Fixed vs floating EMI?</h4>
+      <p>Fixed EMI stays constant, floating EMI changes based on market rates.</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= RELATED ================= -->
+<section class="container">
+
+  <h2 class="section-title">🔗 Related Financial Calculators</h2>
+
+  <p class="section-subtitle">
+    Explore more smart tools to plan your investments, loans, and savings.
+  </p>
+
+  <div class="related-grid">
+
+    <a href="/calculators/sip-calculator/index.html" class="related-card">
+      <div class="rel-icon">📊</div>
+      <h4>SIP Calculator</h4>
+      <p>Compare mutual fund returns with EMI and plan wealth growth.</p>
+    </a>
+
+    <a href="/calculators/daily-investment/index.html" class="related-card">
+      <div class="rel-icon">💰</div>
+      <h4>Daily Investment</h4>
+      <p>Turn small savings into long-term wealth using compounding.</p>
+    </a>
+
+  </div>
+
+</section>
+
+</main>
+
+<footer id="footer"></footer>
+<!-- COMPONENTS -->
+<script src="../../assets/js/components.js"></script>
+
+<!-- BACKGROUND (FIXED) -->
+<script defer src="../../assets/js/background.js"></script>
+
+<!-- PAGE LOGIC -->
+<script src="./app.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "EMI Calculator India",
+  "url": "https://yourdomain.com/calculators/emi-calculator/",
+  "description": "Free EMI calculator for home loan, car loan, and personal loan with interest breakdown and prepayment savings.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "INR"
+  }
+}
+</script>
+
+</body>
+</html>
