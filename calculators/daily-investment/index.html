@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- ================= SEO TITLE ================= -->
+  <title>Daily Investment Calculator India 2026 | SIP Style Wealth Growth Tool</title>
+
+  <!-- ================= META DESCRIPTION ================= -->
+  <meta name="description" content="Free Daily Investment Calculator India. Calculate how small daily investments grow into lakhs using compounding. Plan your wealth growth with visual charts and smart insights.">
+
+  <!-- ================= SEO KEYWORDS ================= -->
+  <meta name="keywords" content="daily investment calculator, sip calculator india, investment growth calculator, compounding calculator, wealth calculator india">
+
+  <meta name="robots" content="index, follow">
+
+  <!-- ================= OPEN GRAPH ================= -->
+  <meta property="og:title" content="Daily Investment Calculator India – Grow Wealth Daily">
+  <meta property="og:description" content="See how ₹100/day becomes lakhs with compounding. Free investment growth calculator with charts.">
+  <meta property="og:type" content="website">
+
+  <!-- ================= CANONICAL ================= -->
+  <link rel="canonical" href="https://yourdomain.com/calculators/daily-investment/">
+
+  <!-- ================= STYLES ================= -->
+  <link rel="stylesheet" href="../../assets/css/global.css">
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- ================= CHART ================= -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<main>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="hero-grid">
+
+    <!-- LEFT -->
+    <div class="hero-left">
+      <div class="badge">INDIA'S SIMPLEST GROWTH CALCULATOR</div>
+
+      <h1 class="hero-title">
+        Turn ₹100/day into <span>Lakhs 💰</span>
+      </h1>
+
+      <p class="hero-sub">
+        Small daily investments grow into big wealth with compounding.
+      </p>
+
+      <div class="chips">
+        <span class="chip">⚡ Instant</span>
+        <span class="chip">📊 Visual</span>
+        <span class="chip">🔒 Private</span>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="hero-right card">
+
+      <div class="card-header">
+        <h3>Daily Investment</h3>
+        <button class="reset" id="resetBtn">Reset</button>
+      </div>
+
+      <label>Daily Investment (₹)</label>
+      <input id="daily" type="number" value="100" min="1">
+
+      <div class="quick">
+        <button data-amt="50">₹50</button>
+        <button data-amt="100" class="active">₹100</button>
+        <button data-amt="500">₹500</button>
+        <button data-amt="1000">₹1000</button>
+      </div>
+
+      <label>Years: <span id="yVal">10</span></label>
+      <input type="range" id="years" min="1" max="30" value="10">
+
+      <label>Return (% p.a): <span id="rVal">12</span></label>
+      <input type="range" id="rate" min="1" max="20" value="12">
+
+     
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= RESULTS ================= -->
+<section class="container">
+
+  <div class="result-grid">
+
+    <div class="result-card">
+      <p>Invested</p>
+      <h2 id="invested">₹0</h2>
+    </div>
+
+    <div class="result-card highlight">
+      <p>Final Value</p>
+      <h2 id="final">₹0</h2>
+    </div>
+
+    <div class="result-card profit">
+      <p>Profit</p>
+      <h2 id="profit">₹0</h2>
+    </div>
+
+  </div>
+
+  <div class="insight">
+    You earned <b id="profitText">₹0</b> extra 💰
+  </div>
+
+</section>
+
+<!-- ================= CHART ================= -->
+<section class="container">
+  <div class="card chart-card">
+    <h3>Growth Over Time</h3>
+
+    <div class="chart-wrapper">
+      <canvas id="chart"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SHARE ================= -->
+<section class="container">
+  <div class="share-box">
+
+    <div>
+      <h3>Share your result 📱</h3>
+      <p>Inspire others to start investing</p>
+    </div>
+
+    <div class="share-actions">
+      <button class="wa" id="waBtn">WhatsApp</button>
+      <button class="copy" id="copyBtn">Copy</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= INFORMATION ================= -->
+<section class="container">
+
+  <h2 class="section-title" style="text-align:center;">
+    📘 Daily Investment & Wealth Growth Explained
+  </h2>
+
+  <div class="info-grid">
+
+    <div class="info-card">
+      <h3>💰 What is Daily Investment?</h3>
+      <p>
+        Daily investment is a disciplined method of investing a fixed small amount every day in financial instruments like mutual funds or SIP plans.
+        It helps build long-term wealth without needing large capital.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h3>📈 How Compound Growth Works</h3>
+      <p>
+        Compound growth means your earnings generate additional earnings over time.
+        The longer you stay invested, the faster your money grows due to compounding.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h3>🚀 Why Daily Investment is Powerful</h3>
+      <p>
+        Even small daily savings like ₹50–₹500 can grow into lakhs over time.
+        It builds financial discipline and reduces investment pressure.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h3>📊 Importance of Time in Investing</h3>
+      <p>
+        Time is the most powerful factor in wealth creation.
+        Starting early significantly increases your final returns due to compounding effect.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= FAQ ================= -->
+<section class="container">
+
+  <h2 class="section-title" style="text-align:center;">
+    ❓ Frequently Asked Questions (FAQ)
+  </h2>
+
+  <div class="info-grid">
+
+    <div class="info-card">
+      <h3>Is daily investment better than SIP?</h3>
+      <p>
+        Both are similar in concept. SIP is structured monthly, while daily investment builds stronger saving discipline.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h3>How much should I invest daily?</h3>
+      <p>
+        Even ₹100 per day can grow significantly over time depending on return rate and duration.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h3>Is this calculator accurate?</h3>
+      <p>
+        It provides estimated results based on fixed return assumptions. Actual returns may vary based on market performance.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h3>Can I become wealthy with daily investment?</h3>
+      <p>
+        Yes, consistent long-term investing with compounding can create strong wealth over time.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= RELATED CALCULATORS ================= -->
+<section class="container">
+
+  <h2 class="section-title" style="text-align:center;">
+    🔗 Related Financial Calculators
+  </h2>
+
+  <p style="text-align:center; opacity:0.8; margin-bottom:20px;">
+    Explore more smart tools for investment planning, loans, and savings growth.
+  </p>
+
+  <div class="related-grid">
+
+    <a href="/calculators/sip-calculator/" class="related-card">
+      <div class="rel-icon">📊</div>
+      <h4>SIP Calculator</h4>
+      <p>Calculate mutual fund returns with compounding</p>
+    </a>
+
+    <a href="/calculators/emi-calculator/" class="related-card">
+      <div class="rel-icon">🏦</div>
+      <h4>EMI Calculator</h4>
+      <p>Plan your loan repayment easily</p>
+    </a>
+
+    <a href="/calculators/lumpsum/" class="related-card">
+      <div class="rel-icon">💰</div>
+      <h4>Lumpsum Calculator</h4>
+      <p>One-time investment growth tool</p>
+    </a>
+
+  </div>
+
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer id="footer">
+  
+<!-- COMPONENTS -->
+<script src="../../assets/js/components.js"></script>
+<script src="../../assets/js/background.js"></script>
+
+<!-- PAGE LOGIC -->
+<script src="./app.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Daily Investment Calculator",
+  "url": "https://yourdomain.com/calculators/daily-investment/",
+  "description": "Calculate how daily investments grow into long-term wealth using compounding interest.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All"
+}
+</script>
+
+</body>
+</html>
