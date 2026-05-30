@@ -1,0 +1,561 @@
+{
+  "Financial": {
+    "icon": "finance",
+    "iconSvg": "finance-icon",
+    "count": 24,
+
+    "subcategories": {
+
+      "Investment": {
+        "icon": "📈",
+
+        "calculators": [
+
+          {
+            "name": "SIP Calculator",
+            "slug": "sip-calculator",
+            "url": "/calculators/sip-calculator/index.html",
+            "description": "Calculate SIP investment returns",
+            "keywords": [
+              "sip",
+              "investment",
+              "mutual fund"
+            ],
+            "popular": true,
+            "trending": true,
+            "new": false
+          },
+
+          {
+            "name": "Lumpsum Calculator",
+            "slug": "lumpsum-calculator",
+            "url": "/calculators/lumpsum-calculator/index.html",
+            "description": "Calculate lumpsum investment growth",
+            "keywords": [
+              "lumpsum",
+              "investment"
+            ],
+            "popular": true,
+            "trending": false,
+            "new": false
+          },
+
+          {
+            "name": "Daily Investment Calculator",
+            "slug": "daily-investment",
+            "url": "/calculators/daily-investment/index.html",
+            "description": "Track daily investment growth",
+            "keywords": [
+              "daily",
+              "investment"
+            ],
+            "popular": false,
+            "trending": true,
+            "new": true
+          },
+
+          {
+            "name": "Step Up SIP Calculator",
+            "slug": "step-up-sip",
+            "url": "/calculators/step-up-sip/index.html",
+            "description": "Increase SIP yearly",
+            "keywords": [
+              "step up sip",
+              "sip"
+            ],
+            "popular": true,
+            "trending": false,
+            "new": false
+          },
+
+          {
+            "name": "SIP Delay Loss Calculator",
+            "slug": "sip-delay-loss",
+            "url": "/calculators/sip-delay-loss/index.html",
+            "description": "Calculate loss due to delayed SIP",
+            "keywords": [
+              "sip delay",
+              "loss"
+            ],
+            "popular": false,
+            "trending": true,
+            "new": true
+          },
+
+          {
+            "name": "Mutual Fund Returns Calculator",
+            "slug": "mutual-fund-returns",
+            "url": "/calculators/mutual-fund-returns/index.html",
+            "description": "Estimate mutual fund returns",
+            "keywords": [
+              "mutual fund",
+              "returns"
+            ],
+            "popular": true,
+            "trending": false,
+            "new": false
+          },
+
+          {
+            "name": "Compound Interest Calculator",
+            "slug": "compound-interest",
+            "url": "/calculators/compound-interest/index.html",
+            "description": "Calculate compound interest",
+            "keywords": [
+              "compound interest",
+              "ci"
+            ],
+            "popular": true,
+            "trending": true,
+            "new": false
+          }
+
+        ]
+      },
+
+      "Loans": {
+        "icon": "🏦",
+
+        "calculators": [
+
+          {
+            "name": "EMI Calculator",
+            "slug": "emi-calculator",
+            "url": "/calculators/emi-calculator/index.html",
+            "description": "Calculate loan EMI",
+            "keywords": [
+              "emi",
+              "loan"
+            ],
+            "popular": true,
+            "trending": true,
+            "new": false
+          },
+
+          {
+            "name": "Home Loan EMI Calculator",
+            "slug": "home-loan-emi",
+            "url": "/calculators/home-loan-emi/index.html",
+            "description": "Home loan monthly EMI",
+            "keywords": [
+              "home loan",
+              "emi"
+            ],
+            "popular": true,
+            "trending": false,
+            "new": false
+          },
+
+          {
+            "name": "Car Loan EMI Calculator",
+            "slug": "car-loan-emi",
+            "url": "/calculators/car-loan-emi/index.html",
+            "description": "Car loan EMI estimator",
+            "keywords": [
+              "car loan",
+              "emi"
+            ],
+            "popular": true,
+            "trending": false,
+            "new": false
+          },
+
+          {
+            "name": "Personal Loan Calculator",
+            "slug": "personal-loan",
+            "url": "/calculators/personal-loan/index.html",
+            "description": "Personal loan EMI",
+            "keywords": [
+              "personal loan",
+              "loan"
+            ],
+            "popular": false,
+            "trending": false,
+            "new": false
+          },
+
+          {
+            "name": "Education Loan Calculator",
+            "slug": "education-loan",
+            "url": "/calculators/education-loan/index.html",
+            "description": "Education loan EMI",
+            "keywords": [
+              "education loan",
+              "student loan"
+            ],
+            "popular": false,
+            "trending": false,
+            "new": true
+          }
+
+        ]
+      },
+
+      "Savings": {
+        "icon": "💰",
+
+        "calculators": [
+
+          {
+            "name": "FD Calculator",
+            "slug": "fd-calculator",
+            "url": "/calculators/fd-calculator/index.html",
+            "description": "Fixed deposit returns",
+            "keywords": [
+              "fd",
+              "fixed deposit"
+            ],
+            "popular": true,
+            "trending": false,
+            "new": false
+          },
+
+          {
+            "name": "RD Calculator",
+            "slug": "rd-calculator",
+            "url": "/calculators/rd-calculator/index.html",
+            "description": "Recurring deposit returns",
+            "keywords": [
+              "rd",
+              "deposit"
+            ],
+            "popular": true,
+            "trending": false,
+            "new": false
+          },
+
+          {
+            "name": "Savings Goal Calculator",
+            "slug": "savings-goal",
+            "url": "/calculators/savings-goal/index.html",
+            "description": "Savings target planner",
+            "keywords": [
+              "saving",
+              "goal"
+            ],
+            "popular": false,
+            "trending": false,
+            "new": false
+          },
+
+          {
+            "name": "Emergency Fund Calculator",
+            "slug": "emergency-fund",
+            "url": "/calculators/emergency-fund/index.html",
+            "description": "Emergency savings calculator",
+            "keywords": [
+              "emergency",
+              "fund"
+            ],
+            "popular": true,
+            "trending": true,
+            "new": false
+          }
+
+        ]
+      },
+
+      "Tax": {
+        "icon": "💸",
+
+        "calculators": [
+
+          {
+            "name": "Income Tax Calculator",
+            "slug": "income-tax",
+            "url": "/calculators/income-tax/index.html",
+            "description": "Calculate income tax",
+            "keywords": [
+              "tax",
+              "income tax"
+            ],
+            "popular": true,
+            "trending": true,
+            "new": false
+          },
+
+          {
+            "name": "GST Calculator",
+            "slug": "gst",
+            "url": "/calculators/gst/index.html",
+            "description": "GST tax calculator",
+            "keywords": [
+              "gst",
+              "tax"
+            ],
+            "popular": true,
+            "trending": true,
+            "new": false
+          }
+
+        ]
+      }
+
+    }
+  },
+
+  "Fitness": {
+    "icon": "fitness",
+    "iconSvg": "health-icon",
+    "count": 12,
+
+    "subcategories": {
+
+      "Health": {
+        "icon": "❤️",
+
+        "calculators": [
+
+          {
+            "name": "BMI Calculator",
+            "slug": "bmi-calculator",
+            "url": "/calculators/bmi-calculator/index.html",
+            "description": "Body Mass Index calculator",
+            "keywords": [
+              "bmi",
+              "weight"
+            ],
+            "popular": true,
+            "trending": true,
+            "new": false
+          },
+
+          {
+            "name": "Calorie Calculator",
+            "slug": "calorie-calculator",
+            "url": "/calculators/calorie-calculator/index.html",
+            "description": "Daily calorie needs",
+            "keywords": [
+              "calorie",
+              "diet"
+            ],
+            "popular": true,
+            "trending": false,
+            "new": false
+          },
+
+          {
+            "name": "Body Fat Calculator",
+            "slug": "body-fat",
+            "url": "/calculators/body-fat/index.html",
+            "description": "Body fat percentage",
+            "keywords": [
+              "body fat"
+            ],
+            "popular": false,
+            "trending": false,
+            "new": false
+          },
+
+          {
+            "name": "BMR Calculator",
+            "slug": "bmr",
+            "url": "/calculators/bmr/index.html",
+            "description": "Basal metabolic rate",
+            "keywords": [
+              "bmr",
+              "metabolism"
+            ],
+            "popular": true,
+            "trending": false,
+            "new": false
+          }
+
+        ]
+      },
+
+      "Nutrition": {
+        "icon": "🥗",
+
+        "calculators": [
+
+          {
+            "name": "Protein Intake Calculator",
+            "slug": "protein-intake",
+            "url": "/calculators/protein-intake/index.html",
+            "description": "Daily protein intake",
+            "keywords": [
+              "protein"
+            ],
+            "popular": true,
+            "trending": false,
+            "new": false
+          },
+
+          {
+            "name": "Water Intake Calculator",
+            "slug": "water-intake",
+            "url": "/calculators/water-intake/index.html",
+            "description": "Daily water intake",
+            "keywords": [
+              "water"
+            ],
+            "popular": true,
+            "trending": true,
+            "new": false
+          }
+
+        ]
+      }
+
+    }
+  },
+
+  "Math": {
+    "icon": "math",
+    "iconSvg": "math-icon",
+    "count": 18,
+
+    "subcategories": {
+
+      "Basic": {
+        "icon": "➗",
+
+        "calculators": [
+
+          {
+            "name": "Percentage Calculator",
+            "slug": "percentage",
+            "url": "/calculators/percentage/index.html",
+            "description": "Percentage calculations",
+            "keywords": [
+              "percentage"
+            ],
+            "popular": true,
+            "trending": true,
+            "new": false
+          },
+
+          {
+            "name": "Average Calculator",
+            "slug": "average",
+            "url": "/calculators/average/index.html",
+            "description": "Average number calculator",
+            "keywords": [
+              "average",
+              "mean"
+            ],
+            "popular": true,
+            "trending": false,
+            "new": false
+          }
+
+        ]
+      },
+
+      "Advanced": {
+        "icon": "🧠",
+
+        "calculators": [
+
+          {
+            "name": "Scientific Calculator",
+            "slug": "scientific",
+            "url": "/calculators/scientific/index.html",
+            "description": "Advanced scientific calculator",
+            "keywords": [
+              "scientific"
+            ],
+            "popular": true,
+            "trending": true,
+            "new": false
+          },
+
+          {
+            "name": "Algebra Calculator",
+            "slug": "algebra",
+            "url": "/calculators/algebra/index.html",
+            "description": "Algebra problem solver",
+            "keywords": [
+              "algebra"
+            ],
+            "popular": true,
+            "trending": false,
+            "new": false
+          }
+
+        ]
+      }
+
+    }
+  },
+
+  "Converters": {
+    "icon": "converter",
+    "iconSvg": "converter-icon",
+    "count": 10,
+
+    "subcategories": {
+
+      "Currency": {
+        "icon": "💱",
+
+        "calculators": [
+
+          {
+            "name": "Currency Converter",
+            "slug": "currency-converter",
+            "url": "/calculators/currency-converter/index.html",
+            "description": "Convert currencies",
+            "keywords": [
+              "currency"
+            ],
+            "popular": true,
+            "trending": true,
+            "new": false
+          },
+
+          {
+            "name": "Crypto Converter",
+            "slug": "crypto-converter",
+            "url": "/calculators/crypto-converter/index.html",
+            "description": "Convert cryptocurrencies",
+            "keywords": [
+              "crypto",
+              "bitcoin"
+            ],
+            "popular": true,
+            "trending": true,
+            "new": true
+          }
+
+        ]
+      },
+
+      "Units": {
+        "icon": "📏",
+
+        "calculators": [
+
+          {
+            "name": "Length Converter",
+            "slug": "length-converter",
+            "url": "/calculators/length-converter/index.html",
+            "description": "Convert length units",
+            "keywords": [
+              "length"
+            ],
+            "popular": true,
+            "trending": false,
+            "new": false
+          },
+
+          {
+            "name": "Weight Converter",
+            "slug": "weight-converter",
+            "url": "/calculators/weight-converter/index.html",
+            "description": "Convert weight units",
+            "keywords": [
+              "weight"
+            ],
+            "popular": true,
+            "trending": false,
+            "new": false
+          }
+
+        ]
+      }
+
+    }
+  }
+}
