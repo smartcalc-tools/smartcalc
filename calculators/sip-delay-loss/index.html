@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SIP Delay Loss Calculator | SmartCalc</title>
+
+<meta name="description" content="Calculate how much wealth you lose by delaying your SIP investment. See early vs late investing impact with charts and insights.">
+
+<link rel="stylesheet" href="../../assets/css/global.css">
+<link rel="stylesheet" href="./style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<header id="navbar"></header>
+
+<main>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="hero-grid">
+
+    <div>
+      <div class="badge">SMART INVESTMENT TOOL</div>
+
+      <h1 class="hero-title">
+        SIP Delay Loss <span>Calculator 📉</span>
+      </h1>
+
+      <p class="hero-sub">
+        Discover how delaying your SIP can cost you lakhs. 
+        Even a few years can dramatically reduce your wealth.
+      </p>
+    </div>
+
+    <!-- INPUT CARD -->
+ <div class="card">
+
+  <!-- BASIC INPUTS -->
+  <label>Monthly SIP Amount (₹)</label>
+  <input type="number" id="amount" value="5000">
+
+  <label>Expected Return (%)</label>
+  <input type="number" id="rate" value="12">
+
+  <label>Total Investment Period (Years)</label>
+  <input type="number" id="years" value="20">
+
+  <label>Delay Period (Years)</label>
+  <input type="number" id="delay" value="5">
+
+  <!-- 🔥 ADVANCED BUTTON -->
+  <button id="toggleAdvanced" class="chip" style="margin-top:16px;">
+    ⚙️ Advanced Settings ▼
+  </button>
+
+  <!-- 🔥 ADVANCED BOX (HIDDEN) -->
+  <div id="advancedBox" style="display:none; margin-top:16px;">
+
+    <label>Step-up SIP (% yearly)</label>
+    <input type="number" id="stepUp" value="">
+
+    <label>Inflation Rate (%)</label>
+    <input type="number" id="inflation" value="">
+
+    <label>Compounding Frequency</label>
+    <select id="frequency">
+      <option value="12">Monthly</option>
+      <option value="4">Quarterly</option>
+      <option value="1">Yearly</option>
+    </select>
+
+  </div>
+
+  </div>
+</section>
+
+<!-- ================= RESULTS ================= -->
+<section class="container">
+    <h2 class="section-title">📊 SIP Delay Loss Results</h2>
+  <p class="section-subtitle">
+    Compare how starting early vs late impacts your long-term wealth creation.
+  </p>
+
+  <div class="result-grid">
+
+    <div class="result-card winner">
+      <p>Start Now Value</p>
+      <h2 id="earlyValue">₹0</h2>
+    </div>
+
+    <div class="result-card">
+      <p>Start Late Value</p>
+      <h2 id="lateValue">₹0</h2>
+    </div>
+
+    <div class="result-card">
+      <p>Loss Amount</p>
+      <h2 id="loss">₹0</h2>
+    </div>
+
+    <div class="result-card">
+      <p>Loss %</p>
+      <h2 id="lossPercent">0%</h2>
+    </div>
+
+    <div class="result-card">
+      <p>Total Invested</p>
+      <h2 id="earlyInvested">₹0</h2>
+    </div>
+
+  </div>
+
+  <div class="insight" id="insightText">
+    Start early to maximize compounding.
+  </div>
+
+</section>
+
+<!-- ================= CHART ================= -->
+<section class="container">
+  <h2 class="section-title">📈 Growth Comparison Chart</h2>
+  <p class="section-subtitle">
+    Visual comparison of wealth growth when investing early vs delaying SIP.
+  </p>
+  
+
+  <div class="card chart-card">
+
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <h3>Growth Comparison 📈</h3>
+      <div>
+        <button id="downloadChart" class="chip">📥 Image</button>
+        <button id="downloadCSV" class="chip">📊 CSV</button>
+      </div>
+    </div>
+
+    <div class="chart-wrapper">
+      <canvas id="chart"></canvas>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= TABLE ================= -->
+<section class="container">
+
+  <div class="card">
+
+    <div style="display:flex; justify-content:space-between;">
+      <h3>Year-wise Comparison 📊</h3>
+      <button id="toggleTable" class="chip">Show ▼</button>
+    </div>
+
+    <div id="tableWrapper" style="display:none; margin-top:15px;">
+
+      <table>
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Start Now</th>
+            <th>Start Late</th>
+            <th>Difference</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= SHARE ================= -->
+<section class="container">
+
+  <div class="share-box">
+
+    <div>
+      <h3>Share your result 😳</h3>
+      <p>Show others why starting early matters</p>
+    </div>
+
+    <div class="share-actions">
+      <button class="wa" id="waBtn">WhatsApp</button>
+      <button class="copy" id="copyBtn">Copy</button>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= INFORMATION ================= -->
+<section class="container">
+
+  <h2 class="section-title">📘 SIP Delay Loss Explained</h2>
+  <p class="section-subtitle">
+    Understand how delaying your SIP investment can reduce long-term wealth and how compounding works in your favor.
+  </p>
+
+  <div class="info-grid">
+
+    <div class="info-card">
+      <h3>What is SIP Delay Loss?</h3>
+      <p>
+        SIP delay loss refers to the amount of wealth you lose when you postpone your investment.
+        Even a few years of delay can significantly reduce your final returns due to compounding.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h3>Why Early Investing Matters?</h3>
+      <p>
+        Early investing allows your money more time to grow. Compounding increases your returns exponentially over time.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h3>How Compounding Works?</h3>
+      <p>
+        Compounding means you earn returns on both your investment and previously earned returns,
+        which leads to exponential growth over long periods.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h3>Best Strategy for SIP</h3>
+      <p>
+        Start early, stay consistent, and increase SIP amount yearly for maximum wealth creation.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="container">
+
+  <h2 class="section-title">❓ Frequently Asked Questions</h2>
+  <p class="section-subtitle">
+    Common questions about SIP delay loss and investment planning.
+  </p>
+
+  <div class="info-grid">
+
+    <div class="info-card">
+      <h3>What is SIP delay loss?</h3>
+      <p>
+        It is the financial loss you face when you delay starting your SIP investment.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h3>Is it better to start SIP early?</h3>
+      <p>
+        Yes, starting early gives your money more time to compound and grow significantly.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h3>Can small SIP create wealth?</h3>
+      <p>
+        Yes, even small SIP amounts can grow into large wealth over long durations.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h3>Does SIP guarantee profit?</h3>
+      <p>
+        No, SIP returns depend on market performance, but long-term investing reduces risk.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h3>What happens if I delay SIP by 5 years?</h3>
+      <p>
+        You may lose a significant portion of potential returns due to lost compounding time.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h3>Is SIP better than FD?</h3>
+      <p>
+        SIP generally offers higher long-term returns compared to fixed deposits, but with market risk.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= RELATED CALCULATORS ================= -->
+<section class="container">
+
+  <h2 class="section-title">🔗 Related Calculators</h2>
+  <p class="section-subtitle">
+    Explore more financial tools to plan your investments smarter.
+  </p>
+
+  <div class="related-grid">
+
+    <a href="../sip-calculator/" class="related-card">
+      <h3>📊 SIP Calculator</h3>
+      <p>Calculate mutual fund returns easily</p>
+    </a>
+
+    <a href="../lumpsum-calculator/" class="related-card">
+      <h3>💰 Lumpsum Calculator</h3>
+      <p>One-time investment growth calculator</p>
+    </a>
+
+    <a href="../sip-vs-fd/" class="related-card">
+      <h3>🏦 SIP vs FD</h3>
+      <p>Compare returns of SIP and FD</p>
+    </a>
+
+  </div>
+
+</section>
+
+</main>
+
+<footer id="footer"></footer>
+
+<!-- COMPONENTS -->
+<script src="../../assets/js/components.js"></script>
+<script src="../../assets/js/background.js"></script>
+
+<!-- PAGE LOGIC -->
+<script src="./app.js"></script>
+
+</body>
+</html>
