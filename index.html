@@ -1,0 +1,1739 @@
+<!-- =========================================
+SMARTCALC ULTRA PREMIUM HOME PAGE
+DARK PURPLE • BLUE • GOLDEN • PROFESSIONAL
+========================================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>
+SmartCalc — AI Powered Premium Calculator Platform
+</title>
+
+<!-- GOOGLE FONT -->
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
+
+<!-- LUCIDE ICON -->
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<style>
+
+/* =========================================
+ROOT
+========================================= */
+
+:root{
+
+  --bg:#040816;
+  --bg2:#0b1224;
+  --card:#111827;
+
+  --white:#ffffff;
+  --text:#dbe4ff;
+  --muted:#94a3b8;
+
+  --blue:#3b82f6;
+  --purple:#8b5cf6;
+  --gold:#fbbf24;
+
+  --border:
+  rgba(255,255,255,0.08);
+
+}
+
+/* =========================================
+RESET
+========================================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+
+  font-family:
+  "Inter",
+  sans-serif;
+
+  background:
+  linear-gradient(
+    180deg,
+    #030712 0%,
+    #050816 40%,
+    #09111f 100%
+  );
+
+  color:white;
+
+  overflow-x:hidden;
+
+  position:relative;
+
+}
+
+/* =========================================
+BACKGROUND
+========================================= */
+
+body::before{
+
+  content:"";
+
+  position:fixed;
+  inset:0;
+
+  background:
+
+  radial-gradient(
+    circle at top left,
+    rgba(139,92,246,0.15),
+    transparent 28%
+  ),
+
+  radial-gradient(
+    circle at top right,
+    rgba(59,130,246,0.12),
+    transparent 28%
+  ),
+
+  radial-gradient(
+    circle at bottom,
+    rgba(251,191,36,0.08),
+    transparent 24%
+  );
+
+  z-index:-2;
+
+}
+
+body::after{
+
+  content:"";
+
+  position:fixed;
+  inset:0;
+
+  background-image:
+
+  linear-gradient(
+    rgba(255,255,255,0.025) 1px,
+    transparent 1px
+  ),
+
+  linear-gradient(
+    90deg,
+    rgba(255,255,255,0.025) 1px,
+    transparent 1px
+  );
+
+  background-size:
+  60px 60px;
+
+  z-index:-1;
+
+}
+
+/* =========================================
+GLOBAL
+========================================= */
+
+a{
+  text-decoration:none;
+}
+
+img{
+  max-width:100%;
+}
+
+.container{
+
+  width:min(100% - 30px, 1380px);
+
+  margin:auto;
+
+}
+
+/* =========================================
+NAVBAR
+========================================= */
+
+.navbar{
+
+  position:sticky;
+  top:0;
+
+  z-index:9999;
+
+  width:100%;
+
+  background:
+  rgba(5,10,22,0.82);
+
+  backdrop-filter:
+  blur(18px);
+
+  border-bottom:
+  1px solid rgba(255,255,255,0.05);
+
+}
+
+.nav-container{
+
+  height:84px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:20px;
+
+}
+
+/* =========================================
+LOGO
+========================================= */
+
+.logo{
+
+  display:flex;
+  align-items:center;
+  gap:14px;
+
+  color:white;
+
+}
+
+.logo-icon{
+
+  width:50px;
+  height:50px;
+
+  border-radius:18px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:
+  linear-gradient(
+    135deg,
+    var(--purple),
+    var(--blue)
+  );
+
+  box-shadow:
+  0 18px 45px rgba(59,130,246,0.35);
+
+}
+
+.logo-text{
+
+  font-size:1.5rem;
+  font-weight:900;
+
+}
+
+.logo-text span{
+  color:var(--gold);
+}
+
+/* =========================================
+MENU
+========================================= */
+
+.nav-links{
+
+  display:flex;
+  align-items:center;
+
+  gap:8px;
+
+  list-style:none;
+
+}
+
+.nav-links a{
+
+  color:#dbe4ff;
+
+  padding:
+  12px 18px;
+
+  border-radius:14px;
+
+  font-size:0.95rem;
+  font-weight:600;
+
+  transition:
+  all 0.3s ease;
+
+}
+
+.nav-links a:hover{
+
+  background:
+  rgba(255,255,255,0.06);
+
+  color:white;
+
+}
+
+/* =========================================
+BUTTON
+========================================= */
+
+.nav-btn{
+
+  height:52px;
+
+  padding:
+  0 24px;
+
+  border-radius:16px;
+
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  color:#111827;
+
+  font-weight:800;
+
+  background:
+  linear-gradient(
+    135deg,
+    var(--gold),
+    #f59e0b
+  );
+
+  box-shadow:
+  0 18px 45px rgba(251,191,36,0.28);
+
+}
+
+/* =========================================
+HERO
+========================================= */
+
+.hero{
+
+  padding:
+  110px 0 90px;
+
+}
+
+.hero-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  1.08fr 0.92fr;
+
+  gap:60px;
+
+  align-items:center;
+
+}
+
+/* =========================================
+LEFT
+========================================= */
+
+.hero-badge{
+
+  width:max-content;
+
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  padding:
+  12px 18px;
+
+  border-radius:999px;
+
+  background:
+  rgba(255,255,255,0.05);
+
+  border:
+  1px solid rgba(255,255,255,0.06);
+
+  margin-bottom:26px;
+
+  color:#e2e8f0;
+
+}
+
+.badge-dot{
+
+  width:10px;
+  height:10px;
+
+  border-radius:50%;
+
+  background:
+  var(--gold);
+
+}
+
+.hero h1{
+
+  font-size:
+  clamp(3rem,7vw,6rem);
+
+  line-height:1;
+
+  font-weight:900;
+
+  margin-bottom:26px;
+
+}
+
+.hero h1 span{
+
+  background:
+  linear-gradient(
+    135deg,
+    #fbbf24,
+    #fde68a
+  );
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+}
+
+.hero p{
+
+  color:var(--muted);
+
+  line-height:1.9;
+
+  max-width:680px;
+
+  font-size:1.06rem;
+
+  margin-bottom:36px;
+
+}
+
+/* =========================================
+BUTTONS
+========================================= */
+
+.hero-buttons{
+
+  display:flex;
+  flex-wrap:wrap;
+
+  gap:18px;
+
+  margin-bottom:44px;
+
+}
+
+.hero-btn{
+
+  height:58px;
+
+  padding:
+  0 26px;
+
+  border-radius:18px;
+
+  display:flex;
+  align-items:center;
+  gap:12px;
+
+  font-weight:700;
+
+  transition:
+  all 0.3s ease;
+
+}
+
+.hero-btn:hover{
+
+  transform:
+  translateY(-4px);
+
+}
+
+.primary-btn{
+
+  color:white;
+
+  background:
+  linear-gradient(
+    135deg,
+    var(--purple),
+    var(--blue)
+  );
+
+  box-shadow:
+  0 20px 40px rgba(59,130,246,0.28);
+
+}
+
+.secondary-btn{
+
+  color:white;
+
+  background:
+  rgba(255,255,255,0.04);
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+
+}
+
+/* =========================================
+STATS
+========================================= */
+
+.stats{
+
+  display:flex;
+  flex-wrap:wrap;
+
+  gap:20px;
+
+}
+
+.stat-box{
+
+  min-width:180px;
+
+  padding:
+  28px;
+
+  border-radius:26px;
+
+  background:
+  rgba(255,255,255,0.04);
+
+  border:
+  1px solid rgba(255,255,255,0.06);
+
+}
+
+.stat-box h3{
+
+  font-size:2.1rem;
+
+  margin-bottom:8px;
+
+  color:var(--gold);
+
+}
+
+.stat-box p{
+
+  color:#cbd5e1;
+
+}
+
+/* =========================================
+AI CARD
+========================================= */
+
+.hero-card{
+
+  position:relative;
+
+  overflow:hidden;
+
+  padding:30px;
+
+  border-radius:34px;
+
+  background:
+  linear-gradient(
+    180deg,
+    rgba(13,19,36,0.96),
+    rgba(10,15,28,0.98)
+  );
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+  0 40px 100px rgba(0,0,0,0.55);
+
+}
+
+/* =========================================
+TOP
+========================================= */
+
+.live-top{
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  margin-bottom:26px;
+
+}
+
+.live-tag{
+
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  padding:
+  10px 16px;
+
+  border-radius:999px;
+
+  background:
+  rgba(255,255,255,0.04);
+
+  border:
+  1px solid rgba(255,255,255,0.06);
+
+  font-size:0.92rem;
+  font-weight:700;
+
+  color:#dbeafe;
+
+}
+
+.live-tag span{
+
+  width:10px;
+  height:10px;
+
+  border-radius:50%;
+
+  background:
+  var(--gold);
+
+}
+
+.live-icon{
+
+  width:54px;
+  height:54px;
+
+  border-radius:18px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:
+  linear-gradient(
+    135deg,
+    var(--purple),
+    var(--blue)
+  );
+
+  box-shadow:
+  0 18px 40px rgba(59,130,246,0.3);
+
+}
+
+/* =========================================
+GRAPH
+========================================= */
+
+.graph{
+
+  position:relative;
+
+  height:250px;
+
+  border-radius:28px;
+
+  overflow:hidden;
+
+  margin-bottom:26px;
+
+  background:
+  linear-gradient(
+    180deg,
+    rgba(255,255,255,0.03),
+    rgba(255,255,255,0.01)
+  );
+
+  border:
+  1px solid rgba(255,255,255,0.05);
+
+}
+
+/* GRID */
+
+.graph::before{
+
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  background-image:
+
+  linear-gradient(
+    rgba(255,255,255,0.03) 1px,
+    transparent 1px
+  ),
+
+  linear-gradient(
+    90deg,
+    rgba(255,255,255,0.03) 1px,
+    transparent 1px
+  );
+
+  background-size:
+  40px 40px;
+
+}
+
+/* SVG */
+
+.graph svg{
+
+  position:absolute;
+  inset:0;
+
+  width:100%;
+  height:100%;
+
+}
+
+/* =========================================
+MINI GRID
+========================================= */
+
+.mini-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(2,1fr);
+
+  gap:18px;
+
+}
+
+/* =========================================
+MINI BOX
+========================================= */
+
+.mini-box{
+
+  display:flex;
+  align-items:center;
+
+  gap:14px;
+
+  padding:
+  18px;
+
+  border-radius:22px;
+
+  background:
+  rgba(255,255,255,0.04);
+
+  border:
+  1px solid rgba(255,255,255,0.06);
+
+  transition:
+  all 0.3s ease;
+
+}
+
+.mini-box:hover{
+
+  transform:
+  translateY(-4px);
+
+  background:
+  rgba(255,255,255,0.06);
+
+}
+
+.mini-icon{
+
+  width:52px;
+  height:52px;
+
+  border-radius:16px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  color:white;
+
+  flex-shrink:0;
+
+}
+
+.crypto{
+  background:linear-gradient(135deg,#f59e0b,#f97316);
+}
+
+.finance{
+  background:linear-gradient(135deg,#22c55e,#14b8a6);
+}
+
+.ai{
+  background:linear-gradient(135deg,#8b5cf6,#d946ef);
+}
+
+.health{
+  background:linear-gradient(135deg,#ef4444,#f43f5e);
+}
+
+.mini-content span{
+
+  display:block;
+
+  margin-bottom:4px;
+
+  font-weight:700;
+
+}
+
+.mini-content small{
+
+  color:#94a3b8;
+
+}
+
+/* =========================================
+CATEGORY SECTION
+========================================= */
+
+.section{
+
+  padding:
+  100px 0;
+
+}
+
+.section-head{
+
+  text-align:center;
+
+  margin-bottom:60px;
+
+}
+
+.section-tag{
+
+  display:inline-block;
+
+  padding:
+  10px 18px;
+
+  border-radius:999px;
+
+  background:
+  rgba(255,255,255,0.04);
+
+  border:
+  1px solid rgba(255,255,255,0.06);
+
+  margin-bottom:20px;
+
+}
+
+.section-head h2{
+
+  font-size:
+  clamp(2.2rem,5vw,4rem);
+
+  margin-bottom:16px;
+
+}
+
+.section-head p{
+
+  max-width:700px;
+
+  margin:auto;
+
+  color:var(--muted);
+
+  line-height:1.8;
+
+}
+
+/* =========================================
+GRID
+========================================= */
+
+.category-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(4,1fr);
+
+  gap:24px;
+
+}
+
+.category-card{
+
+  padding:
+  34px;
+
+  border-radius:30px;
+
+  background:
+  rgba(255,255,255,0.04);
+
+  border:
+  1px solid rgba(255,255,255,0.06);
+
+  transition:
+  all 0.35s ease;
+
+}
+
+.category-card:hover{
+
+  transform:
+  translateY(-8px);
+
+  border-color:
+  rgba(251,191,36,0.3);
+
+}
+
+.category-icon{
+
+  width:76px;
+  height:76px;
+
+  border-radius:22px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  margin-bottom:24px;
+
+  color:white;
+
+}
+
+.education{
+  background:linear-gradient(135deg,#8b5cf6,#d946ef);
+}
+
+.category-card h3{
+
+  font-size:1.5rem;
+
+  margin-bottom:14px;
+
+}
+
+.category-card p{
+
+  color:var(--muted);
+
+  line-height:1.8;
+
+  margin-bottom:22px;
+
+}
+
+.category-footer{
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+}
+
+/* =========================================
+CTA
+========================================= */
+
+.cta{
+
+  padding-bottom:120px;
+
+}
+
+.cta-box{
+
+  position:relative;
+
+  overflow:hidden;
+
+  text-align:center;
+
+  padding:
+  90px 40px;
+
+  border-radius:40px;
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(139,92,246,0.18),
+    rgba(59,130,246,0.18)
+  );
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+
+}
+
+.cta h2{
+
+  font-size:
+  clamp(2.4rem,5vw,4.5rem);
+
+  margin-bottom:18px;
+
+}
+
+.cta p{
+
+  max-width:700px;
+
+  margin:
+  auto auto 36px;
+
+  color:#dbeafe;
+
+  line-height:1.8;
+
+}
+
+.cta-btn{
+
+  width:max-content;
+
+  margin:auto;
+
+  height:58px;
+
+  padding:
+  0 26px;
+
+  border-radius:18px;
+
+  display:flex;
+  align-items:center;
+  gap:12px;
+
+  color:#111827;
+
+  font-weight:800;
+
+  background:
+  linear-gradient(
+    135deg,
+    var(--gold),
+    #f59e0b
+  );
+
+}
+
+/* =========================================
+FOOTER
+========================================= */
+
+.footer{
+
+  background:
+  rgba(5,10,22,0.94);
+
+  border-top:
+  1px solid rgba(255,255,255,0.08);
+
+}
+
+.footer-container{
+
+  padding:
+  70px 0 34px;
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(4,1fr);
+
+  gap:40px;
+
+}
+
+.footer h3,
+.footer h4{
+
+  margin-bottom:20px;
+
+}
+
+.footer p,
+.footer a{
+
+  color:var(--muted);
+
+  line-height:1.9;
+
+}
+
+.footer a{
+
+  display:block;
+
+  margin-bottom:10px;
+
+}
+
+.footer a:hover{
+  color:white;
+}
+
+.footer-bottom{
+
+  padding:
+  24px 0;
+
+  text-align:center;
+
+  border-top:
+  1px solid rgba(255,255,255,0.08);
+
+  color:#94a3b8;
+
+}
+
+/* =========================================
+RESPONSIVE
+========================================= */
+
+@media(max-width:1200px){
+
+  .hero-grid,
+  .category-grid{
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+  }
+
+}
+
+@media(max-width:900px){
+
+  .hero-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .nav-links{
+    display:none;
+  }
+
+  .hero{
+    padding:90px 0 70px;
+  }
+
+  .hero-buttons{
+    flex-direction:column;
+  }
+
+  .hero-btn{
+    width:100%;
+    justify-content:center;
+  }
+
+  .category-grid,
+  .footer-container{
+    grid-template-columns:1fr;
+  }
+
+  .mini-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =========================================
+NAVBAR
+========================================= -->
+
+<nav class="navbar">
+
+<div class="container nav-container">
+
+<a href="#"
+   class="logo">
+
+<div class="logo-icon">
+<i data-lucide="sparkles"></i>
+</div>
+
+<div class="logo-text">
+Smart<span>Calc</span>
+</div>
+
+</a>
+
+<ul class="nav-links">
+
+<li><a href="#">Home</a></li>
+<li><a href="#">Finance</a></li>
+<li><a href="#">Health</a></li>
+<li><a href="#">Education</a></li>
+<li><a href="#">AI Tools</a></li>
+
+</ul>
+
+<a href="#"
+   class="nav-btn">
+
+<i data-lucide="rocket"></i>
+
+Explore
+
+</a>
+
+</div>
+
+</nav>
+
+<!-- =========================================
+HERO
+========================================= -->
+
+<section class="hero">
+
+<div class="container hero-grid">
+
+<!-- LEFT -->
+
+<div>
+
+<div class="hero-badge">
+
+<span class="badge-dot"></span>
+
+AI Powered Premium Calculator Platform
+
+</div>
+
+<h1>
+
+Future Ready
+<span>Smart</span>
+Calculation Ecosystem
+
+</h1>
+
+<p>
+
+Advanced futuristic calculator platform
+for finance, AI, investment, education,
+health and analytics with premium
+modern UI experience.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="#"
+   class="hero-btn primary-btn">
+
+<i data-lucide="rocket"></i>
+
+Explore Platform
+
+</a>
+
+<a href="#"
+   class="hero-btn secondary-btn">
+
+<i data-lucide="sparkles"></i>
+
+Learn More
+
+</a>
+
+</div>
+
+<div class="stats">
+
+<div class="stat-box">
+
+<h3>200+</h3>
+<p>Professional Calculators</p>
+
+</div>
+
+<div class="stat-box">
+
+<h3>1M+</h3>
+<p>Monthly Users</p>
+
+</div>
+
+<div class="stat-box">
+
+<h3>99.9%</h3>
+<p>Calculation Accuracy</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- RIGHT CARD -->
+
+<div class="hero-card">
+
+<div class="live-top">
+
+<div class="live-tag">
+
+<span></span>
+
+AI Analytics
+
+</div>
+
+<div class="live-icon">
+
+<i data-lucide="activity"></i>
+
+</div>
+
+</div>
+
+<!-- GRAPH -->
+
+<div class="graph">
+
+<svg
+viewBox="0 0 600 220"
+preserveAspectRatio="none">
+
+<defs>
+
+<linearGradient
+id="lineGradient"
+x1="0"
+x2="1">
+
+<stop offset="0%"
+stop-color="#3b82f6"/>
+
+<stop offset="50%"
+stop-color="#8b5cf6"/>
+
+<stop offset="100%"
+stop-color="#f59e0b"/>
+
+</linearGradient>
+
+<linearGradient
+id="areaGradient"
+x1="0"
+x2="0"
+y1="0"
+y2="1">
+
+<stop offset="0%"
+stop-color="#8b5cf6"
+stop-opacity="0.55"/>
+
+<stop offset="100%"
+stop-color="#8b5cf6"
+stop-opacity="0"/>
+
+</linearGradient>
+
+</defs>
+
+<!-- AREA -->
+
+<path
+d="
+M0 180
+C40 160 80 80 120 100
+C160 120 200 30 240 60
+C280 90 320 70 360 100
+C400 130 440 40 480 70
+C520 100 560 50 600 20
+L600 220
+L0 220
+Z
+"
+fill="url(#areaGradient)"
+/>
+
+<!-- LINE -->
+
+<path
+d="
+M0 180
+C40 160 80 80 120 100
+C160 120 200 30 240 60
+C280 90 320 70 360 100
+C400 130 440 40 480 70
+C520 100 560 50 600 20
+"
+fill="none"
+stroke="url(#lineGradient)"
+stroke-width="5"
+stroke-linecap="round"
+/>
+
+</svg>
+
+</div>
+
+<!-- MINI GRID -->
+
+<div class="mini-grid">
+
+<div class="mini-box">
+
+<div class="mini-icon crypto">
+<i data-lucide="bitcoin"></i>
+</div>
+
+<div class="mini-content">
+<span>Crypto ROI</span>
+<small>+48.2%</small>
+</div>
+
+</div>
+
+<div class="mini-box">
+
+<div class="mini-icon finance">
+<i data-lucide="banknote"></i>
+</div>
+
+<div class="mini-content">
+<span>SIP Growth</span>
+<small>₹8.2L</small>
+</div>
+
+</div>
+
+<div class="mini-box">
+
+<div class="mini-icon ai">
+<i data-lucide="brain"></i>
+</div>
+
+<div class="mini-content">
+<span>AI Prediction</span>
+<small>99.7%</small>
+</div>
+
+</div>
+
+<div class="mini-box">
+
+<div class="mini-icon health">
+<i data-lucide="heart-pulse"></i>
+</div>
+
+<div class="mini-content">
+<span>Health AI</span>
+<small>Optimized</small>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================================
+CATEGORY SECTION
+========================================= -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="section-tag">
+Smart Categories
+</div>
+
+<h2>
+
+Explore Powerful
+Calculator Systems
+
+</h2>
+
+<p>
+
+Modern calculators for investors,
+students, professionals and digital users.
+
+</p>
+
+</div>
+
+<div class="category-grid">
+
+<!-- CARD -->
+
+<div class="category-card">
+
+<div class="category-icon finance">
+<i data-lucide="chart-column"></i>
+</div>
+
+<h3>Finance</h3>
+
+<p>
+SIP, EMI, FD, GST and
+investment calculators.
+</p>
+
+<div class="category-footer">
+
+<span>42 Calculators</span>
+
+<i data-lucide="arrow-right"></i>
+
+</div>
+
+</div>
+
+<!-- CARD -->
+
+<div class="category-card">
+
+<div class="category-icon health">
+<i data-lucide="heart-pulse"></i>
+</div>
+
+<h3>Health</h3>
+
+<p>
+BMI, calories, nutrition
+and fitness tools.
+</p>
+
+<div class="category-footer">
+
+<span>18 Calculators</span>
+
+<i data-lucide="arrow-right"></i>
+
+</div>
+
+</div>
+
+<!-- CARD -->
+
+<div class="category-card">
+
+<div class="category-icon education">
+<i data-lucide="graduation-cap"></i>
+</div>
+
+<h3>Education</h3>
+
+<p>
+Math, algebra, science
+and academic tools.
+</p>
+
+<div class="category-footer">
+
+<span>35 Calculators</span>
+
+<i data-lucide="arrow-right"></i>
+
+</div>
+
+</div>
+
+<!-- CARD -->
+
+<div class="category-card" >
+
+<div class="category-icon ai">
+<i data-lucide="brain-circuit"></i>
+</div>
+
+<h3>AI Tools</h3>
+
+<p>
+AI prediction, analytics
+and smart planning systems.
+</p>
+
+<div class="category-footer">
+
+<span>12 AI Tools</span>
+
+<i data-lucide="arrow-right"></i>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================================
+CTA
+========================================= -->
+
+<section class="cta">
+
+<div class="container">
+
+<div class="cta-box">
+
+<h2>
+
+Build Your Future
+Smarter With AI
+
+</h2>
+
+<p>
+
+Professional futuristic calculators
+with modern premium interface
+and ultra fast performance.
+
+</p>
+
+<a href="#"
+   class="cta-btn">
+
+<i data-lucide="rocket"></i>
+
+Launch SmartCalc
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================================
+FOOTER
+========================================= -->
+
+<footer class="footer">
+
+<div class="container footer-container">
+
+<div>
+
+<h3>SmartCalc</h3>
+
+<p>
+
+Modern AI powered calculator
+ecosystem with futuristic
+premium design.
+
+</p>
+
+</div>
+
+<div>
+
+<h4>Company</h4>
+
+<a href="#">About</a>
+<a href="#">Contact</a>
+<a href="#">Privacy</a>
+
+</div>
+
+<div>
+
+<h4>Calculators</h4>
+
+<a href="/calculators/sip-calculator/">SIP Calculator</a>
+<a href="#">EMI Calculator</a>
+<a href="#">GST Calculator</a>
+
+</div>
+
+<div>
+
+<h4>Resources</h4>
+
+<a href="#">Blog</a>
+<a href="#">Terms</a>
+<a href="#">Support</a>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+© 2026 SmartCalc. All rights reserved.
+
+</div>
+
+</footer>
+
+<script>
+
+lucide.createIcons();
+
+</script>
+
+</body>
+</html>
