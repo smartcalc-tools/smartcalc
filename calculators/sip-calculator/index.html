@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<!-- ========================================
+BASIC SEO
+======================================== -->
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0">
+
+<title>
+  SIP Calculator India 2026 – Calculate Mutual Fund Returns Online
+</title>
+
+<meta
+  name="description"
+  content="Free SIP Calculator India – calculate your monthly investment returns, future value, and wealth growth instantly.">
+
+<meta
+  name="keywords"
+  content="sip calculator india, mutual fund calculator, investment calculator">
+
+<meta
+  name="robots"
+  content="index, follow">
+
+<link
+  rel="canonical"
+  href="https://yourdomain.com/calculators/sip-calculator/">
+
+<!-- ========================================
+OPEN GRAPH
+======================================== -->
+
+<meta
+  property="og:title"
+  content="SIP Calculator India">
+
+<meta
+  property="og:description"
+  content="Advanced SIP calculator with chart, inflation & step-up SIP.">
+
+<meta
+  property="og:type"
+  content="website">
+
+<!-- ========================================
+CSS
+======================================== -->
+
+<link
+  rel="stylesheet"
+  href="../../assets/css/global.css">
+
+<link
+  rel="stylesheet"
+  href="../../assets/css/layout.css">
+
+<link
+  rel="stylesheet"
+  href="../../assets/css/navbar-footer.css">
+
+<link
+  rel="stylesheet"
+  href="./style.css">
+
+<!-- ========================================
+CHART
+======================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+
+
+<body>
+
+<!-- ========================================
+NAVBAR
+======================================== -->
+
+<header id="navbar"></header>
+
+
+
+<!-- ========================================
+MAIN
+======================================== -->
+
+<main>
+
+
+<!-- ========================================
+HERO
+======================================== -->
+
+<section class="hero">
+
+  <div class="hero-grid">
+
+    <!-- LEFT -->
+
+    <div>
+
+      <div class="badge">
+
+        SMART INVESTMENT TOOL
+
+      </div>
+
+      <h1 class="hero-title">
+
+        SIP Calculator India
+
+        <span>
+
+          Plan Your Wealth Growth 📈
+
+        </span>
+
+      </h1>
+
+      <p class="hero-sub">
+
+        Calculate SIP returns, future value,
+        wealth growth, and investment planning instantly.
+
+      </p>
+
+    </div>
+
+
+    <!-- RIGHT -->
+
+    <div class="card">
+
+      <label>
+
+        Calculation Type
+
+      </label>
+
+      <select id="mode">
+
+        <option value="sip">
+
+          SIP (Monthly)
+
+        </option>
+
+        <option value="lumpsum">
+
+          Lumpsum
+
+        </option>
+
+      </select>
+
+      <hr
+        style="
+        margin:18px 0;
+        opacity:.15;
+      ">
+
+      <label>
+
+        Monthly Investment (₹)
+
+      </label>
+
+      <input
+        type="number"
+        id="amount"
+        value="5000">
+
+      <label>
+
+        Time Period (Years)
+
+      </label>
+
+      <input
+        type="number"
+        id="time"
+        value="10">
+
+      <label>
+
+        Expected Return (%)
+
+      </label>
+
+      <input
+        type="number"
+        id="rate"
+        value="12">
+
+
+      <!-- INFLATION -->
+
+      <label style="margin-top:18px;">
+
+        Inflation Adjustment
+
+      </label>
+
+      <select id="inflationToggle">
+
+        <option value="no">
+
+          No
+
+        </option>
+
+        <option value="yes">
+
+          Yes
+
+        </option>
+
+      </select>
+
+      <div
+        id="inflationBox"
+        style="display:none;">
+
+        <label>
+
+          Inflation Rate (%)
+
+        </label>
+
+        <input
+          type="number"
+          id="inflation"
+          value="6">
+
+      </div>
+
+
+      <!-- ADVANCED -->
+
+      <div id="sipAdvanced">
+
+        <button
+          id="toggleAdvanced"
+          class="chip"
+          style="margin-top:18px;">
+
+          Advanced Settings ▼
+
+        </button>
+
+        <div
+          id="advancedBox"
+          style="
+          display:none;
+          margin-top:18px;
+        ">
+
+          <label>
+
+            Step-up SIP (%)
+
+          </label>
+
+          <input
+            type="number"
+            id="stepUp"
+            value="0">
+
+          <label>
+
+            Compounding
+
+          </label>
+
+          <select id="frequency">
+
+            <option value="12">
+
+              Monthly
+
+            </option>
+
+            <option value="4">
+
+              Quarterly
+
+            </option>
+
+            <option value="1">
+
+              Yearly
+
+            </option>
+
+          </select>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+RESULTS
+======================================== -->
+
+<section class="container">
+
+  <h2>
+
+    📊 SIP Calculation Results
+
+  </h2>
+
+  <div class="result-grid">
+
+    <div class="result-card">
+
+      <p>
+
+        Total Invested
+
+      </p>
+
+      <h2 id="invested">
+
+        ₹0
+
+      </h2>
+
+    </div>
+
+    <div class="result-card highlight">
+
+      <p>
+
+        Future Value
+
+      </p>
+
+      <h2 id="futureValue">
+
+        ₹0
+
+      </h2>
+
+    </div>
+
+    <div class="result-card">
+
+      <p>
+
+        Estimated Profit
+
+      </p>
+
+      <h2 id="profit">
+
+        ₹0
+
+      </h2>
+
+    </div>
+
+    <div class="result-card">
+
+      <p>
+
+        Inflation Adjusted Value
+
+      </p>
+
+      <h2 id="realValue">
+
+        ₹0
+
+      </h2>
+
+    </div>
+
+    <div class="result-card">
+
+      <p>
+
+        Time to Double
+
+      </p>
+
+      <h2 id="doubleTime">
+
+        —
+
+      </h2>
+
+    </div>
+
+  </div>
+
+  <div
+    class="insight"
+    id="insightText">
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+CHART
+======================================== -->
+
+<section class="container">
+
+  <h2>
+
+    📈 SIP Growth Chart
+
+  </h2>
+
+  <div class="card chart-card">
+
+    <div class="chart-top">
+
+      <h3>
+
+        Growth Overview
+
+      </h3>
+
+      <div>
+
+        <button
+          id="downloadChart"
+          class="chip">
+
+          📥 Image
+
+        </button>
+
+        <button
+          id="downloadCSV"
+          class="chip">
+
+          📊 CSV
+
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="chart-wrapper">
+
+      <canvas id="chart"></canvas>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+SHARE
+======================================== -->
+
+<section class="container">
+
+  <div class="share-box">
+
+    <div>
+
+      <h3>
+
+        Share Your Result 📱
+
+      </h3>
+
+      <p>
+
+        Help others plan smarter investments
+
+      </p>
+
+    </div>
+
+    <div class="share-actions">
+
+      <button
+        class="wa"
+        id="waBtn">
+
+        WhatsApp
+
+      </button>
+
+      <button
+        class="copy"
+        id="copyBtn">
+
+        Copy
+
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+TABLE
+======================================== -->
+
+<section class="container">
+
+  <div class="card">
+
+    <div class="table-top">
+
+      <h3>
+
+        Year-wise Breakdown 📊
+
+      </h3>
+
+      <button
+        id="toggleTable"
+        class="chip">
+
+        Show ▼
+
+      </button>
+
+    </div>
+
+    <div
+      id="tableWrapper"
+      style="
+      display:none;
+      margin-top:20px;
+    ">
+
+      <table>
+
+        <thead>
+
+          <tr>
+
+            <th>
+
+              Year
+
+            </th>
+
+            <th>
+
+              Invested
+
+            </th>
+
+            <th>
+
+              Value
+
+            </th>
+
+            <th>
+
+              Profit
+
+            </th>
+
+          </tr>
+
+        </thead>
+
+        <tbody id="tableBody"></tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+EDUCATIONAL
+======================================== -->
+
+<section class="container">
+
+  <h2 class="section-title">
+
+    📘 What is SIP?
+
+  </h2>
+
+  <div class="info-grid">
+
+    <div class="info-card">
+
+      <h3>
+
+        What is SIP?
+
+      </h3>
+
+      <p>
+
+        SIP (Systematic Investment Plan)
+        allows you to invest small amounts
+        regularly in mutual funds.
+
+      </p>
+
+    </div>
+
+    <div class="info-card">
+
+      <h3>
+
+        Benefits of SIP
+
+      </h3>
+
+      <p>
+
+        SIP helps build long-term wealth
+        through disciplined investing
+        and compounding growth.
+
+      </p>
+
+    </div>
+
+    <div class="info-card">
+
+      <h3>
+
+        Power of Compounding
+
+      </h3>
+
+      <p>
+
+        Your investment earns returns,
+        and those returns generate
+        additional returns over time.
+
+      </p>
+
+    </div>
+
+    <div class="info-card">
+
+      <h3>
+
+        Why Start Early?
+
+      </h3>
+
+      <p>
+
+        Starting SIP early gives more
+        time for wealth multiplication
+        and reduces financial stress.
+
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+FAQ
+======================================== -->
+
+<section class="container">
+
+  <h2 class="section-title">
+
+    Frequently Asked Questions
+
+  </h2>
+
+  <div class="info-grid">
+
+    <div class="info-card">
+
+      <h3>
+
+        What is SIP?
+
+      </h3>
+
+      <p>
+
+        SIP is a method of investing
+        regularly in mutual funds.
+
+      </p>
+
+    </div>
+
+    <div class="info-card">
+
+      <h3>
+
+        Is SIP safe?
+
+      </h3>
+
+      <p>
+
+        SIP reduces market timing risk
+        through disciplined investing.
+
+      </p>
+
+    </div>
+
+    <div class="info-card">
+
+      <h3>
+
+        Can I stop SIP anytime?
+
+      </h3>
+
+      <p>
+
+        Yes, most SIP investments can
+        be stopped or modified anytime.
+
+      </p>
+
+    </div>
+
+    <div class="info-card">
+
+      <h3>
+
+        What return can SIP generate?
+
+      </h3>
+
+      <p>
+
+        Returns depend on market
+        performance and fund type.
+
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+RELATED CALCULATORS
+======================================== -->
+
+<section class="container">
+
+  <h2 class="section-title">
+
+    🔗 Related Calculators
+
+  </h2>
+
+  <div class="related-grid">
+
+    <a
+      href="/calculators/lumpsum-calculator/"
+      class="related-card">
+
+      <h3>
+
+        Lumpsum Calculator
+
+      </h3>
+
+      <p>
+
+        One-time investment planning
+
+      </p>
+
+    </a>
+
+    <a
+      href="/calculators/compound-interest/"
+      class="related-card">
+
+      <h3>
+
+        Compound Interest
+
+      </h3>
+
+      <p>
+
+        Understand wealth compounding
+
+      </p>
+
+    </a>
+
+    <a
+      href="/calculators/daily-investment/"
+      class="related-card">
+
+      <h3>
+
+        Daily Investment
+
+      </h3>
+
+      <p>
+
+        Small daily savings growth
+
+      </p>
+
+    </a>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- ========================================
+FOOTER
+======================================== -->
+
+<footer id="footer"></footer>
+
+
+
+<!-- ========================================
+SCHEMA
+======================================== -->
+
+<script type="application/ld+json">
+
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"SIP Calculator India",
+  "applicationCategory":"FinanceApplication",
+  "operatingSystem":"All",
+  "description":"Calculate SIP returns online instantly."
+}
+
+</script>
+
+
+
+<!-- ========================================
+GLOBAL CONFIG
+======================================== -->
+
+<script>
+
+window.CALCULATOR_CONFIG = {
+
+  name:
+  "SIP Calculator",
+
+  slug:
+  "sip-calculator",
+
+  category:
+  "Investment"
+
+};
+
+</script>
+
+
+
+<!-- ========================================
+LIBRARIES
+======================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/simplex-noise@3.0.1/simplex-noise.min.js"></script>
+
+
+
+<!-- ========================================
+GLOBAL SCRIPTS
+======================================== -->
+
+<script src="../../assets/js/components.js"></script>
+
+<script src="../../assets/js/background.js"></script>
+
+
+
+<!-- ========================================
+PAGE LOGIC
+======================================== -->
+
+<script src="./app.js"></script>
+
+
+
+</body>
+</html>
