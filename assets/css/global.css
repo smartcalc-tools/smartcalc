@@ -1,0 +1,329 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background: #0b1120;
+  color: #e2e8f0;
+}
+
+/* ===== NAVBAR ===== */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  background: rgba(15, 23, 42, 0.7);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 14px 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LOGO */
+.logo {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* MENU */
+.nav-menu {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+
+.nav-menu a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+  position: relative;
+}
+
+/* Hover underline animation */
+.nav-menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: #38bdf8;
+  transition: 0.3s;
+}
+
+.nav-menu a:hover {
+  color: #fff;
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
+}
+
+/* MOBILE BUTTON */
+.nav-toggle {
+  display: none;
+  font-size: 22px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: #020617;
+  margin-top: 80px;
+  border-top: 1px solid #1e293b;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.footer h3,
+.footer h4 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.footer p {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.footer a {
+  display: block;
+  color: #64748b;
+  margin-bottom: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.footer a:hover {
+  color: #38bdf8;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #1e293b;
+  font-size: 13px;
+  color: #64748b;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+
+  .nav-menu {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background: #0f172a;
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 10px;
+    display: none;
+    width: 200px;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+}
+
+/* 🌊 GLOBAL BACKGROUND CANVAS */
+#bgCanvas{
+  position:fixed;
+  inset:0;
+  width:100vw;
+  height:100vh;
+  z-index:-1;
+  pointer-events:none;
+}
+
+/* ✨ subtle center glow */
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:radial-gradient(circle at center,
+    rgba(255,255,255,0.04),
+    transparent 60%);
+  pointer-events:none;
+}
+
+.hero-left{
+  position:relative;
+}
+
+#heroWave{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  z-index:1;
+  pointer-events:none;
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.4;
+}
+
+/* ================= HERO FIX ================= */
+.hero {
+  position: relative;
+  padding: 40px 20px 20px;   /* reduced from large padding */
+  min-height: auto;         /* IMPORTANT */
+}
+
+/* canvas should NOT create spacing */
+#heroWave {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+}
+
+/* content above canvas */
+.hero-grid {
+  position: relative;
+  z-index: 1;
+}
+
+/* ================= REMOVE EXTRA GAP BETWEEN SECTIONS ================= */
+section {
+  margin: 0;
+  padding: 40px 20px;
+}
+
+/* tighten first section after hero */
+.hero + section {
+  margin-top: 10px;   /* instead of big gap */
+  padding-top: 20px;
+}
+
+/* ================= HEADINGS GAP FIX ================= */
+h1, h2, h3 {
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+/* ================= CONTAINER CONTROL ================= */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* remove extra top spacing from first container */
+.container:first-of-type {
+  margin-top: 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 800;
+  margin: 40px 0 20px;
+  color: #fff;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #7c5cff, #00d4ff);
+  margin: 10px auto 0;
+  border-radius: 10px;
+}
+
+.section-subtitle{
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--muted);
+
+  max-width: 720px;
+  margin: 0 auto 30px;
+
+  letter-spacing: 0.2px;
+
+  /* subtle premium feel */
+  opacity: 0.9;
+}
+.section-subtitle{
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--muted);
+
+  max-width: 720px;
+  margin: 0 auto 30px;
+
+  letter-spacing: 0.3px;
+
+  /* gradient soft effect */
+  background: linear-gradient(90deg, #cdd7ff, #9fb0d1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  opacity: 0.85;
+}
+
+@media (max-width: 600px){
+  .section-subtitle{
+    font-size: 14px;
+    margin-bottom: 20px;
+    padding: 0 10px;
+  }
+}
+
