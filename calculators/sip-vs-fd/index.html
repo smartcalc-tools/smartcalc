@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SIP vs FD vs RD Decision Engine | SmartCalc Pro</title>
+
+<link rel="stylesheet" href="../../assets/css/global.css">
+<link rel="stylesheet" href="./style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<header id="navbar"></header>
+
+<main>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="hero-grid">
+
+    <div>
+      <div class="badge">SMART WEALTH ENGINE v2.0</div>
+
+      <h1 class="hero-title">
+        SIP vs FD vs RD <span>Smart Wealth Planner 📊</span>
+      </h1>
+
+      <p class="hero-sub">
+        Compare investments, reverse-plan goals, and get AI-powered insights.
+      </p>
+
+      <div class="chips">
+        <span class="chip">⚡ Real-time</span>
+        <span class="chip">🧠 AI Insight</span>
+        <span class="chip">📈 Multi Asset</span>
+      </div>
+    </div>
+
+    <!-- ================= INPUT PANEL ================= -->
+    <div class="card">
+
+      <!-- MODE CONTROL -->
+      <label>Decision Mode</label>
+      <select id="mode">
+        <option value="basic">Basic View</option>
+        <option value="compare">Compare Mode</option>
+        <option value="goal">Goal Planner (Reverse SIP)</option>
+      </select>
+
+      <!-- PRODUCT TYPE CONTROL -->
+      <label style="margin-top:12px;">Investment Type</label>
+      <select id="productType">
+        <option value="sip">SIP (Mutual Funds)</option>
+        <option value="fd">FD (Fixed Deposit)</option>
+        <option value="rd">RD (Recurring Deposit)</option>
+        <option value="all">Compare All</option>
+      </select>
+
+      <hr style="margin:15px 0; opacity:0.2">
+
+      <h3>Core Inputs</h3>
+
+      <label>Monthly Investment (₹)</label>
+      <input type="number" id="amount" value="5000">
+
+      <label>Time Horizon (Years)</label>
+      <input type="number" id="time" value="10">
+
+      <label>Expected Return (%)</label>
+      <input type="number" id="sipRate" value="12">
+
+      <!-- ADVANCED TOGGLE -->
+      <div style="margin-top:15px;">
+        <button id="toggleAdvanced" class="chip">
+          Advanced Settings ▼
+        </button>
+      </div>
+
+      <!-- ADVANCED PANEL -->
+      <div id="advancedBox" style="display:none; margin-top:15px;">
+
+        <label>Step-up SIP (%)</label>
+        <input type="number" id="stepUp" value="5">
+
+        <label>FD Rate (%)</label>
+        <input type="number" id="fdRate" value="7">
+
+        <label>RD Rate (%)</label>
+        <input type="number" id="rdRate" value="6">
+
+        <label>Inflation (%)</label>
+        <input type="number" id="inflation" value="6">
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= RESULT PANEL ================= -->
+<section class="container">
+
+  <div class="result-grid">
+
+    <div class="result-card highlight">
+      <p>Best Recommendation</p>
+      <h2 id="winner">—</h2>
+    </div>
+
+    <div class="result-card">
+      <p>SIP Value</p>
+      <h2 id="sipValue">₹0</h2>
+    </div>
+
+    <div class="result-card">
+      <p>FD Value</p>
+      <h2 id="fdValue">₹0</h2>
+    </div>
+
+  </div>
+
+  <!-- ================= AI INSIGHT PANEL ================= -->
+  <div class="insight" id="insightText">
+    AI Insight will appear here...
+  </div>
+
+</section>
+
+<!-- ================= CHART ================= -->
+<section class="container">
+
+  <div class="card chart-card">
+
+    <h3>Wealth Growth Comparison 📈</h3>
+
+    <div class="chart-wrapper">
+      <canvas id="chart"></canvas>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= SCENARIO ================= -->
+<section class="container">
+
+  <div class="card">
+
+    <h3>Market Scenario Analysis 🔥</h3>
+
+    <div class="result-grid">
+
+      <div class="result-card">
+        <p>Bear Market (8%)</p>
+        <h2 id="sipLow">₹0</h2>
+      </div>
+
+      <div class="result-card">
+        <p>Normal Market (12%)</p>
+        <h2 id="sipMid">₹0</h2>
+      </div>
+
+      <div class="result-card">
+        <p>Bull Market (18%)</p>
+        <h2 id="sipHigh">₹0</h2>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= GOAL MODE PANEL ================= -->
+<section class="container">
+
+  <div class="card">
+
+    <h3>Goal Planning Engine 🎯</h3>
+
+    <p style="color:var(--muted); font-size:13px;">
+      Reverse calculate how much you need to invest to reach your target.
+    </p>
+
+    <div class="result-grid">
+
+      <div class="result-card">
+        <p>Target Goal</p>
+        <h2 id="goalAmount">₹10,00,000</h2>
+      </div>
+
+      <div class="result-card">
+        <p>Required SIP</p>
+        <h2 id="requiredSip">—</h2>
+      </div>
+
+      <div class="result-card">
+        <p>Feasibility</p>
+        <h2 id="goalStatus">—</h2>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= TABLE ================= -->
+<section class="container">
+
+  <div class="card">
+
+    <h3>Yearly Breakdown 📊</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Year</th>
+          <th>SIP</th>
+          <th>FD</th>
+          <th>RD</th>
+          <th>Gap</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+
+  </div>
+
+</section>
+
+<!-- ================= SHARE ================= -->
+<section class="container">
+
+  <div class="share-box">
+
+    <div>
+      <h3>Share Insight 🚀</h3>
+      <p>Compare and optimize your wealth instantly</p>
+    </div>
+
+    <div class="share-actions">
+      <button class="wa" id="waBtn">WhatsApp</button>
+      <button class="copy" id="copyBtn">Copy</button>
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+<footer id="footer"></footer>
+
+<script src="../../assets/js/components.js"></script>
+<script src="./app.js"></script>
+
+<script>
+document.getElementById("toggleAdvanced").onclick = () => {
+  const box = document.getElementById("advancedBox");
+  box.style.display = box.style.display === "none" ? "block" : "none";
+};
+</script>
+
+</body>
+</html>
