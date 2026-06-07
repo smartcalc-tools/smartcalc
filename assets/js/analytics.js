@@ -5,7 +5,7 @@ const script = document.createElement("script");
 script.async = true;
 
 script.src =
-"https://www.googletagmanager.com/gtag/js?id=G-LX8EHV1BNR";
+"https://www.googletagmanager.com/gtag/js?id=G-RDR0C88ZNF";
 
 document.head.appendChild(script);
 
@@ -20,4 +20,4 @@ window.gtag = gtag;
 
 gtag("js", new Date());
 
-gtag("config", "G-LX8EHV1BNR");
+gtag("config", "G-RDR0C88ZNF");
